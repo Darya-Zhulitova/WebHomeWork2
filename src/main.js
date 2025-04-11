@@ -12,21 +12,26 @@ document.querySelector('#app').innerHTML = `
             <ul id="list_ul"></ul>
         </section>
         <section id="item" class="hidden">
-            <h3 id="name"></h3>
-            <h4>Description:</h4>
-            <p id="description"></p>
-            <h4>Origin:</h4>
-            <p id="origin"></p>
-            <img src="" width="50%" alt="" decoding="async" id="image" loading="lazy">
-            <button id="close">Close</button>
+            <div>
+                <h3 id="name"></h3>
+                <h4>Description:</h4>
+                <p id="description"></p>
+                <h4>Origin:</h4>
+                <p id="origin"></p>
+                <img src="" alt="" decoding="async" id="image" loading="lazy">
+            <div/>
+            <div>
+                <button id="close">Close</button>
+            </div>
         </section>
     </div>
 `
 
 
 document.querySelector('#close')?.addEventListener('click', () => {
-    document.querySelector('#list')?.classList.remove('hidden');
-    document.querySelector('#item')?.classList.add('hidden');
+    document.querySelector('#list').classList.remove('hidden');
+    document.querySelector('#item').classList.add('hidden');
+    document.querySelector('#image').src = "";
 });
 
 fetch('https://api.thecatapi.com/v1/breeds', {headers: {'x-api-key': API_KEY}})
