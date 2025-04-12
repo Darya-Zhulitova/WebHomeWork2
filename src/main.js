@@ -1,5 +1,3 @@
-import './style.css'
-
 const API_KEY = 'live_BpmdIkOFGDwKN9gd42m67HqJOfSU3MyffAbhDD26YAZEUwLkTEiESd9GGLNGzsUQ';
 
 document.querySelector('#app').innerHTML = `
